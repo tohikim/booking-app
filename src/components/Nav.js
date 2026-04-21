@@ -1,20 +1,27 @@
 import navItems from './navData';
+import useIsMobile from '../useIsMobile';
 
 const Nav = () => {
     return (
-        <nav style={{
-            padding:'1rem',
-        }}>
+        <nav>
             <ul style={{
                 display: 'flex',
                 flexDirection: 'row',
-                gap: '3vw',
-                listStyle:'none'
+                flexWrap: 'wrap', // Prevents breaking on 800px screens
+                justifyContent: 'center',
+                gap: '1.5rem',
+                listStyle: 'none',
+                padding: 0,
+                margin: 0
             }}>
-                {navItems.map((item) => (<li key={item}>{item}</li>))}
+                {navItems.map((item) => (
+                    <li key={item} style={{ fontWeight: '600', fontSize: '0.9rem' }}>
+                        {item}
+                    </li>
+                ))}
             </ul>
         </nav>
-    )
-}
+    );
+};
 
 export default Nav;

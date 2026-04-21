@@ -1,31 +1,37 @@
 import FooterMenu from './FooterMenu';
 import logo from '../assets/Logo.svg';
 import navItems from './navData';
+import useIsMobile from '../useIsMobile';
 
 const Footer = () => {
-    const contactList = ["Address","Phone number","Email"];
-    const socialList= ["Instagram","Facebook","X","LinkedIn"];
+    const isMobile = useIsMobile();
+    
     return (
-        <footer style={{
-            display:'flex',
-            flexDirection:'row',
-            width:'100vw',
-            justifyContent:'space-evenly'
-        }}>
-            <img alt="Little Lemon Logo" src={logo} style={{
-                height: '10vh', 
-                margin:"1rem"
-                }}/>
+        <footer style={{ backgroundColor: '#EDEFEE', padding: '2rem 20px' }}>
             <div style={{
+                maxWidth: '1200px',
+                margin: '0 auto',
                 display: 'flex',
-                flexDirection: 'row',
+                flexDirection: isMobile ? 'column' : 'row',
+                gap: '2rem',
+                justifyContent: 'space-between',
+                alignItems: isMobile ? 'center' : 'flex-start'
             }}>
-                <FooterMenu label="Doormat Navigation" items={navItems}/>
-                <FooterMenu label="Contact" items={contactList}/>
-                <FooterMenu label="Social Media Links" items={socialList} />
+                <img alt="Logo" src={logo} style={{ height: '60px' }} />
+                
+                <div style={{
+                    display: 'flex',
+                    flexDirection: isMobile ? 'column' : 'row',
+                    gap: isMobile ? '1.5rem' : '4rem',
+                    textAlign: isMobile ? 'center' : 'left'
+                }}>
+                    <FooterMenu label="Navigation" items={navItems} />
+                    <FooterMenu label="Contact" items={["Address", "Phone", "Email"]} />
+                    <FooterMenu label="Social" items={["Instagram", "Facebook"]} />
+                </div>
             </div>
         </footer>
-    )
-}
+    );
+};
 
 export default Footer;
