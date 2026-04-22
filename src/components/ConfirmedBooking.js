@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useIsMobile from '../useIsMobile';
 
 const ConfirmedBooking = () => {
     return (
@@ -35,7 +36,8 @@ const ConfirmedBooking = () => {
                 fontFamily: 'Karla', 
                 fontSize: '1.25rem', 
                 opacity: '0.9',
-                marginBottom: '2.5rem'  
+                marginBottom: '2.5rem',
+                maxWidth: useIsMobile ? '90%' : '800px', 
             }}>
                 A confirmation email has been sent to your inbox.
             </p>
