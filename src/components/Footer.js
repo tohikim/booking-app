@@ -7,7 +7,7 @@ const Footer = () => {
     const isMobile = useIsMobile();
     
     return (
-        <footer style={{ backgroundColor: '#EDEFEE', padding: '2rem 20px' }}>
+        <footer style={{ backgroundColor: '#EDEFEE', padding: '2rem 20px'}}>
             <div style={{
                 maxWidth: '1200px',
                 margin: '0 auto',
@@ -25,9 +25,9 @@ const Footer = () => {
                     gap: isMobile ? '1.5rem' : '4rem',
                     textAlign: isMobile ? 'center' : 'left'
                 }}>
-                    <FooterMenu label="Navigation" items={navItems} />
-                    <FooterMenu label="Contact" items={["Address", "Phone", "Email"]} />
-                    <FooterMenu label="Social" items={["Instagram", "Facebook"]} />
+                    <FooterMenu title="Navigation" items={navItems} />
+                    <FooterMenu title="Contact" items={["Address", "Phone", "Email"]} />
+                    <FooterMenu title="Social" items={["Instagram", "Facebook"]} />
                 </div>
             </div>
         </footer>

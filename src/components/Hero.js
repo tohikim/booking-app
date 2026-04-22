@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import heroImage from "../assets/restauranfood.jpg";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -79,7 +80,7 @@ const Hero = () => {
               lineHeight: "1.5",
               color: "#EDEFEE",
               maxWidth: isMobile ? "100%" : "450px",
-              marginBottom:'2rem',
+              marginBottom: "2rem",
             }}
           >
             We are a family-owned Mediterranean restaurant, focused on
@@ -87,22 +88,25 @@ const Hero = () => {
             flavors to our artisan ingredients, we bring the heart of Greece to
             the streets of Chicago.
           </p>
-          <button
-            type="submit"
-            style={{
-              padding: "0.5rem 1rem",
-              width: isMobile ? "100%" : "50%",
-              margin: isMobile ? "0 auto" : "0",
-              backgroundColor: "#F4CE14",
-              border: 0,
-              borderRadius: "8px",
-              fontFamily: ` "Karla", sans-serif`,
-              fontSize: "1rem",
-              fontWeight: "700",
-            }}
-          >
-            Reserve a Table
-          </button>
+          <Link to="/booking">
+            <button
+              className="cta-button"
+              type="submit"
+              style={{
+                padding: "0.5rem 1rem",
+                width: isMobile ? "100%" : "50%",
+                margin: isMobile ? "0 auto" : "0",
+                backgroundColor: "#F4CE14",
+                border: 0,
+                borderRadius: "8px",
+                fontFamily: ` "Karla", sans-serif`,
+                fontSize: "1rem",
+                fontWeight: "700",
+              }}
+            >
+              Reserve a Table
+            </button>
+          </Link>
         </div>
 
         <div style={imageSectionStyle}>
