@@ -18,7 +18,6 @@ const Header = () => {
           marginRight: 0,
           paddingRight: 0,
           width: "100vw",
-          border: "1px solid blue",
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",

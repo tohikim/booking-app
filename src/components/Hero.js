@@ -11,7 +11,7 @@ const Hero = () => {
   }, []);
 
   const containerStyle = {
-    // maxWidth: "1200px",
+    maxWidth: "1200px",
     margin: "0 auto",
     padding: isMobile ? "4rem 2rem" : "6rem 2rem",
     display: "flex",
