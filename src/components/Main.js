@@ -12,6 +12,7 @@ const Main = () => {
   const navigate = useNavigate();
 
   const submitForm = (formData) => {
+    console.log("Form Data Received:",formData);
     const success = submitAPI(formData);
     if (success) {
       navigate("/confirmed");
