@@ -1,21 +1,31 @@
 import navItems from './navData';
-import useIsMobile from '../useIsMobile';
 
-const Nav = () => {
+const Nav = ({ isMobile, isOpen }) => {
+    const navListStyle = {
+        display: isMobile ? (isOpen ? 'flex' : 'none') : 'flex',
+        flexDirection: isMobile ? 'column' : 'row',
+        position: isMobile ? 'absolute' : 'static',
+        top: isMobile ? '100%' : 'auto', // Adjust based on your header height
+        left: 0,
+        width: isMobile ? '100%' : 'auto',
+        backgroundColor: '#FFFFFF',
+        padding: isMobile ? '1.5rem 0' : '0',
+        gap: isMobile ? '1rem' : '1.5rem',
+        listStyle: 'none',
+        margin: 0,
+        alignItems: 'center',
+        zIndex: 100,
+    };
+
     return (
         <nav>
-            <ul style={{
-                display: 'flex',
-                flexDirection: 'row',
-                flexWrap: 'wrap', // Prevents breaking on 800px screens
-                justifyContent: 'center',
-                gap: '1.5rem',
-                listStyle: 'none',
-                padding: 0,
-                margin: 0
-            }}>
+            <ul style={navListStyle}>
                 {navItems.map((item) => (
-                    <li key={item} style={{ fontWeight: '600', fontSize: '0.9rem' }}>
+                    <li key={item} style={{ 
+                        fontWeight: '600', 
+                        fontSize: '0.9rem',
+                        fontFamily: '"Karla", sans-serif'
+                    }}>
                         {item}
                     </li>
                 ))}
