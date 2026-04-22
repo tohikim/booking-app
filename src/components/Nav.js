@@ -5,12 +5,15 @@ const Nav = ({ isMobile, isOpen }) => {
         display: isMobile ? (isOpen ? 'flex' : 'none') : 'flex',
         flexDirection: isMobile ? 'column' : 'row',
         position: isMobile ? 'absolute' : 'static',
-        top: isMobile ? '100%' : 'auto', // Adjust based on your header height
+        top: isMobile ? '100%' : undefined, // Adjust based on your header height
         left: 0,
         width: isMobile ? '100%' : 'auto',
         backgroundColor: '#FFFFFF',
         padding: isMobile ? '1.5rem 0' : '0',
         gap: isMobile ? '1rem' : '1.5rem',
+        paddingRight: isMobile ? undefined : 20,
+        justifyContent: 'center',
+        height: '100%',
         listStyle: 'none',
         margin: 0,
         alignItems: 'center',

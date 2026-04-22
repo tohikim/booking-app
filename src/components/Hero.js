@@ -11,7 +11,7 @@ const Hero = () => {
   }, []);
 
   const containerStyle = {
-    maxWidth: "1200px",
+    // maxWidth: "1200px",
     margin: "0 auto",
     padding: isMobile ? "4rem 2rem" : "6rem 2rem",
     display: "flex",
@@ -79,6 +79,7 @@ const Hero = () => {
               lineHeight: "1.5",
               color: "#EDEFEE",
               maxWidth: isMobile ? "100%" : "450px",
+              marginBottom:'2rem',
             }}
           >
             We are a family-owned Mediterranean restaurant, focused on

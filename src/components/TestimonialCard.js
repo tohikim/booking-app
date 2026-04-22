@@ -1,3 +1,5 @@
+
+
 const TestimonialCard = ({ rating, name, review, photo }) => {
     // Helper to render stars
     const renderStars = (count) => "⭐".repeat(count);

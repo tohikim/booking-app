@@ -5,12 +5,12 @@ import About from './About';
 
 const Main = () => {
     return (
-        <main>
+        <>
             <Hero />
             <Highlights />
             <Testimonials />
             <About />
-        </main>
+        </>
     )
 }
 

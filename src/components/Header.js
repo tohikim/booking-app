@@ -10,15 +10,21 @@ const Header = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header style={{ padding: "0 20px", position: "relative" }}>
+    <header style={{ position: "relative" }}>
       <div
         style={{
-          margin: "0",
+          margin: 0,
+          marginLeft: 0,
+          marginRight: 0,
+          paddingRight: 0,
+          width: "100vw",
+          border: "1px solid blue",
           display: "flex",
-          flexDirection: "row", // Keep logo and icon on same line
+          flexDirection: "row",
           justifyContent: "space-between",
-          padding: "1rem",
-          width: "100%",
+          paddingTop: "1rem",
+          paddingBottom: "1rem",
+          paddingLeft: "1rem",
         }}
       >
         <img
@@ -37,18 +43,42 @@ const Header = () => {
               fontSize: "2rem",
               cursor: "pointer",
               color: "#495E57",
-              alignSelf: "right",
-              alignItems:'right',
               padding: 0,
-              margin:0,
-              zIndex: 101,
+              textAlign: "right",
+              margin: 0,
+              paddingRight: 20,
             }}
           >
-            {isOpen ? "✕" : "☰"}
+            {isOpen ? (
+              <p
+                style={{
+                  margin: 0,
+                  padding: 0,
+                  alignSelf: "right",
+                  display: "flex",
+                  justifyContent: "right",
+                }}
+              >
+                ✕
+              </p>
+            ) : (
+              <p
+                style={{
+                  margin: 0,
+                  padding: 0,
+                  alignSelf: "right",
+                  display: "flex",
+                  justifyContent: "right",
+                }}
+              >
+                ☰
+              </p>
+            )}
+            <Nav isMobile={isMobile} isOpen={isOpen} />
           </button>
-        ) : null}
-
-        <Nav isMobile={isMobile} isOpen={isOpen} />
+        ) : (
+          <Nav isMobile={isMobile} isOpen={isOpen} />
+        )}
       </div>
     </header>
   );
